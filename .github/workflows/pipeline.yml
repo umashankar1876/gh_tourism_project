@@ -3,7 +3,7 @@ name: Tourism Project MLOps Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   register-dataset:
