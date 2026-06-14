@@ -3,15 +3,6 @@ Creates HF dataset repo and uploads tourism.csv."""
 import os
 from huggingface_hub import HfApi, login
 
-token = os.getenv("HF_TOKEN")
-
-print("Token exists:", bool(token))
-print("Starts with hf_:", token.startswith("hf_") if token else False)
-print("Length:", len(token) if token else 0)
-
-print("Token repr:", repr(token))
-print("Token length:", len(token))
-
 login(token=os.environ['HF_TOKEN'])
 api = HfApi()
 
