@@ -5,7 +5,7 @@ import sys
 from huggingface_hub import HfApi, login
 
 # Fetch token safely and clear out any weird trailing whitespaces/newlines
-hf_token = os.environ.get('HF_TOKEN', '').strip()
+hf_token = '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'
 
 if not hf_token:
     print("CRITICAL: The 'HF_TOKEN' environment variable is missing or empty!")
