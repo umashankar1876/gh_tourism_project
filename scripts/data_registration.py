@@ -1,4 +1,3 @@
-%%writefile tourism_project/scripts/data_registration.py
 """register_data.py — GitHub Actions: register-dataset job.
 Creates HF dataset repo and uploads tourism.csv."""
 import os
@@ -7,10 +6,15 @@ from huggingface_hub import HfApi, login
 login(token=os.environ['HF_TOKEN'])
 api = HfApi()
 
-HF_USER      = 'umas1990'
+HF_USER = 'umas1990'
 DATASET_REPO = f'{HF_USER}/tourism-dataset'
 
-api.create_repo(repo_id=DATASET_REPO, repo_type='dataset', exist_ok=True)
+api.create_repo(
+    repo_id=DATASET_REPO,
+    repo_type='dataset',
+    exist_ok=True
+)
+
 print(f'Dataset repo: https://huggingface.co/datasets/{DATASET_REPO}')
 
 api.upload_file(
@@ -19,4 +23,5 @@ api.upload_file(
     repo_id=DATASET_REPO,
     repo_type='dataset',
 )
+
 print('tourism.csv registered on Hugging Face Hub.')
